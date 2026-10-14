@@ -33,7 +33,7 @@ export function encodeVarLen(n: number): number[] {
   return out.reverse();
 }
 
-export function decodeVarLen(bytes: number[], pos: number): { value: number; next: number } {
+export function decodeVarLen(bytes: Uint8Array, pos: number): { value: number; next: number } {
   let value = 0;
   let p = pos;
   for (;;) {

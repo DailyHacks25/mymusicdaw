@@ -205,7 +205,7 @@ function applyFollow(region: DrummerRegion, active: Map<string, PlacedNote>): vo
   const src = SOURCE_TRACKS[region.followSource];
   const rng = mulberry32(hashSeed(region.seed, "follow"));
   const kickAt = new Set<number>();
-  for (const [key, n] of active) {
+  for (const n of active.values()) {
     if (familyOf(n.articulation) === "kick") kickAt.add(n.step);
   }
   for (const sn of src.notes) {

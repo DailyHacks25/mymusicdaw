@@ -262,7 +262,6 @@ describe("Fill engine (PRD §5 Fill Heuristics)", () => {
 
 describe("Follow Mechanism (MIDI-to-MIDI, kick bias to source onsets)", () => {
   it("adds follow kicks aligned to source 16th positions", () => {
-    const plain = generateRegion(makeRegion({}));
     const followed = generateRegion(makeRegion({ followSource: "demoBass" }));
     const followHits = followed.filter((h) => h.origin === "follow");
     expect(followHits.length).toBeGreaterThan(0);
